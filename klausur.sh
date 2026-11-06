@@ -80,9 +80,14 @@ chpasswd < /home/malte/Verwaltung/Konten/selin.txt
 echo "Abschnitt 3 Alias, Variable und versteckte Datei"
 sleep 2
 
-# Gib selin den dauerhaften Alias zustand. Er zeigt erst den Platz auf der Festplatte und dann den Arbeitsspeicher.
+# Gib selin den dauerhaften Alias zustand. 
+# Er zeigt erst den Platz auf der Festplatte und dann den Arbeitsspeicher.
+echo "alias zustand='df -h && free -h'" >> /home/selin/.bashrc
 # Gib selin die dauerhafte Umgebungsvariable STANDORT mit dem Wert Bremen Mitte.
+echo "export STANDORT='Bremen Mitte'" >> /home/selin/.bashrc
 # Lege im Home von malte die versteckte Datei .lindenhof an. Sie gehört malte.
+touch /home/malte/.lindenhof
+chown malte /home/malte/.lindenhof
 
 # -------------------------------------------------------------------------
 
