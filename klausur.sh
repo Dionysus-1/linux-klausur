@@ -1,10 +1,14 @@
 # 1 Erstkonfiguration
+
 echo "Abschnitt 1 Erstkonfiguration"
 sleep 2
 
 # Aktualisiere die Paketlisten.
+apt update
 # Aktualisiere alle installierten Pakete. Ohne Rückfrage.
+apt upgrade -y
 # Installiere figlet und cowsay. Ohne Rückfrage.
+apt install figlet cowsay -y
 
 # -------------------------------------------------------------------------
 
