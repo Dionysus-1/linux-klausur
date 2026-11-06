@@ -1,1 +1,0 @@
-30 18 * * 1-5 cp -r /home/selin/Buchungen /home/selin/Tresor
