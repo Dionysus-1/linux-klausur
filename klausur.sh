@@ -95,9 +95,23 @@ chown malte /home/malte/.lindenhof
 echo "Abschnitt 4 Cronjobs"
 sleep 2
 
-# Cronjob für selin: Montag bis Freitag um 18:30 kopiert er den Ordner /home/selin/Buchungen nach /home/selin/Tresor.
-# Cronjob für malte: Jeden Tag um 08:00 und um 20:00 hängt er das aktuelle Datum an die Datei /home/malte/Berichte/rundgang.log an. Alte Einträge bleiben stehen.
-# Cronjob für amir: Am 1. jedes Monats um 03:00 löscht er den Inhalt von /srv/fundsachen.
+# Cronjob für selin: 
+	# Montag bis Freitag um 18:30 kopiert er den Ordner /home/selin/Buchungen nach /home/selin/Tresor.
+echo "30 18 * * 1-5 cp -r /home/selin/Buchungen /home/selin/Tresor" > job_selin.txt
+crontab -u selin job_selin.txt
+
+
+# Cronjob für malte: 
+	# Jeden Tag um 08:00 und um 20:00 
+	# hängt er das aktuelle Datum an die Datei /home/malte/Berichte/rundgang.log an. 
+	# Alte Einträge bleiben stehen.
+echo "0 8,20 * * * date >> /home/malte/Berichte/rundgang.log" > job_malte.txt
+crontab -u malte job_malte.txt
+
+# Cronjob für amir: 
+	# Am 1. jedes Monats um 03:00 löscht er den Inhalt von /srv/fundsachen.
+echo "0 3 1 * * rm -rf /srv/fundsachen/*" > job_amir.txt
+crontab -u amir job_amir.txt
 
 # -------------------------------------------------------------------------
 
