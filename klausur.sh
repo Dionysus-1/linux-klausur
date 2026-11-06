@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # 1 Erstkonfiguration
 
 echo "Abschnitt 1 Erstkonfiguration"
@@ -127,7 +129,6 @@ sleep 1
 echo "1"
 sleep 1
 
-#reboot
-
+reboot
 
 # -------------------------------------------------------------------------
