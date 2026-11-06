@@ -120,3 +120,14 @@ echo "Abschnitt 5: Abschluss"
 sleep 2
 
 # Zähle 3 Sekunden herunter. Starte danach den Rechner neu.
+echo "3"
+sleep 1
+echo "2"
+sleep 1
+echo "1"
+sleep 1
+
+#reboot
+
+
+# -------------------------------------------------------------------------
